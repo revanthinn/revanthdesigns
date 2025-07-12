@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/mona-sans');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Revanth Adepu Portfolio Design System - Black & Red Glassmorphism
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Black and Red theme */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Red as primary accent */
+    --primary: 0 100% 60%;
+    --primary-foreground: 0 0% 95%;
+
+    /* Dark secondary */
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Red accent variations */
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 0 100% 60%;
+
+    --radius: 1rem;
+
+    /* Custom portfolio colors - Black & Red only */
+    --fire-red: 0 100% 60%;
+    --deep-red: 0 85% 45%;
+    --dark-red: 0 70% 25%;
+    --pure-black: 0 0% 0%;
+    --deep-black: 0 0% 3%;
+    --dark-surface: 0 0% 8%;
+    --darker-surface: 0 0% 5%;
+    
+    /* Glassmorphism gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 100% 60% / 0.8), hsl(0 85% 45% / 0.6));
+    --gradient-glass: linear-gradient(135deg, hsl(0 0% 15% / 0.1), hsl(0 0% 25% / 0.05));
+    --gradient-red-glass: linear-gradient(135deg, hsl(0 100% 60% / 0.15), hsl(0 85% 45% / 0.1));
+    
+    /* Glassmorphism shadows */
+    --shadow-glow-red: 0 0 30px hsl(0 100% 60% / 0.4);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.6);
+    --shadow-elegant: 0 20px 60px hsl(0 0% 0% / 0.8);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    /* Remove universal Sora font */
+  }
+
+  html, body {
+    @apply bg-background text-foreground;
+    /* Remove universal Sora font */
+  }
+
+  /* Hero titles and section headers */
+  h1, h2, .font-hero, .font-section-header {
+    font-family: 'Mona Sans', sans-serif !important;
+    font-weight: 600;
+  }
+  /* Extra bold for main hero titles if needed */
+  .font-hero-bold {
+    font-family: 'Mona Sans', sans-serif !important;
+    font-weight: 800;
+  }
+
+  /* Paragraphs and long descriptions */
+  p, .font-paragraph, .font-description {
+    font-family: 'Satoshi', sans-serif !important;
+    font-weight: 400;
+  }
+  .font-paragraph-medium {
+    font-family: 'Satoshi', sans-serif !important;
+    font-weight: 500;
+  }
+
+  /* Buttons, nav, captions */
+  button, nav, .font-caption, .font-nav, .font-button, .font-caption-small {
+    font-family: 'Sora', sans-serif !important;
+    font-weight: 500;
+  }
+  .font-button-bold {
+    font-family: 'Sora', sans-serif !important;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-glass {
+    background: var(--gradient-glass);
+  }
+  
+  .gradient-red-glass {
+    background: var(--gradient-red-glass);
+  }
+  
+  /* Glassmorphism effects */
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-glass);
+  }
+  
+  .glass-red {
+    background: rgba(255, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 0, 0, 0.15);
+    box-shadow: var(--shadow-glow-red);
+  }
+  
+  /* Glow effects */
+  .glow-red {
+    box-shadow: var(--shadow-glow-red);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+  
+  /* Hover effects */
+  .hover-glow-red:hover {
+    box-shadow: var(--shadow-glow-red);
+    transform: translateY(-4px) scale(1.02);
+  }
+  
+  .hover-glass:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+  }
+  
+  /* Custom animations */
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow-pulse {
+    from {
+      box-shadow: 0 0 20px hsl(0 100% 60% / 0.4);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(0 100% 60% / 0.8);
+    }
+  }
+  
+  /* Scroll animations */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .animate-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-left.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .animate-slide-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-right.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Circular Favicon</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32" style="border: 1px solid #ccc;"></canvas>
+    <br>
+    <button onclick="createCircularFavicon()">Create Circular Favicon</button>
+    <script>
+        function createCircularFavicon() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Create a circular mask
+            ctx.beginPath();
+            ctx.arc(16, 16, 16, 0, 2 * Math.PI);
+            ctx.clip();
+            
+            // Load the profile image
+            const img = new Image();
+            img.onload = function() {
+                // Draw the image to fit the circle
+                ctx.drawImage(img, 0, 0, 32, 32);
+                
+                // Convert to favicon format and download
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'favicon.ico';
+                    a.click();
+                    URL.revokeObjectURL(url);
+                }, 'image/x-icon');
+            };
+            img.src = '../src/assets/revanth-profile.jpg';
+        }
+    </script>
+</body>
+</html> 
