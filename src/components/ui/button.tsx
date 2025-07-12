@@ -19,9 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Custom portfolio variants
-        electric: "bg-electric-blue text-primary-foreground hover:bg-electric-blue/90 hover-glow-blue transition-smooth",
-        neon: "bg-neon-green text-primary-foreground hover:bg-neon-green/90 hover-glow-green transition-smooth",
-        hero: "gradient-primary text-primary-foreground hover:scale-105 hover-glow-blue transition-smooth font-semibold",
+        hero: "gradient-primary text-primary-foreground hover:scale-105 hover-glow-red transition-smooth font-semibold",
         glass: "bg-card/50 border border-border backdrop-blur-sm hover:bg-card/70 transition-smooth",
       },
       size: {

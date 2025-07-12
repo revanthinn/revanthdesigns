@@ -24,15 +24,15 @@ const HeroSection = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-darker-surface to-deep-black"></div>
       
       {/* Parallax sliding background elements */}
       <motion.div style={{ y }} className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-fire-red rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-fire-red rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '1000ms' }}></div>
+        <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-fire-red rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-4 sm:right-10 w-48 sm:w-72 h-48 sm:h-72 bg-fire-red rounded-full mix-blend-multiply filter blur-xl animate-pulse" style={{ animationDelay: '1000ms' }}></div>
       </motion.div>
       
       {/* Animated particles/dots */}
@@ -54,14 +54,14 @@ const HeroSection = () => {
         ></motion.div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Profile picture placeholder */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, type: "spring", stiffness: 100, damping: 15 }}
-            className="w-48 h-48 mx-auto mb-8 mt-20 rounded-full glass-red p-2 animate-glow-pulse"
+            className="w-32 h-32 sm:w-48 sm:h-48 mx-auto mb-6 sm:mb-8 mt-16 sm:mt-20 rounded-full glass-red p-2 animate-glow-pulse"
           >
             <img 
               src={revanthProfile} 
@@ -74,7 +74,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold font-inter mb-6"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold font-inter mb-4 sm:mb-6"
           >
             <span className="text-foreground">Revanth</span>{' '}
             <span className="text-fire-red">Adepu</span>
@@ -84,7 +84,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-muted-foreground mb-4"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-3 sm:mb-4"
           >
             Freelance Thumbnail Designer & CSE-AIML Student
           </motion.p>
@@ -93,7 +93,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-2xl mx-auto px-4 sm:px-0"
           >
             Creating high-converting YouTube thumbnails that grab attention and drive clicks. 
             Building the future with AI & Machine Learning.
@@ -103,15 +103,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0"
           >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="hero" size="xl" onClick={() => scrollToSection('portfolio')}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+              <Button variant="hero" size="xl" onClick={() => scrollToSection('portfolio')} className="w-full sm:w-auto">
                 View My Work
               </Button>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button variant="glass" size="xl" onClick={downloadCV}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
+              <Button variant="glass" size="xl" onClick={downloadCV} className="w-full sm:w-auto">
                 <Download className="mr-2" />
                 Download CV
               </Button>
@@ -122,7 +122,7 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2 }}
-            className="mt-16"
+            className="mt-12 sm:mt-16"
           >
             <motion.div
               animate={{ y: [0, 10, 0] }}

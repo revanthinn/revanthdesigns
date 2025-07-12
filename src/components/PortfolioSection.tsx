@@ -113,21 +113,21 @@ const PortfolioSection = () => {
     : portfolioItems.filter(item => item.category === selectedCategory);
 
   return (
-    <section id="portfolio" className="py-20 bg-darker-surface">
-      <div className="container mx-auto px-6">
+    <section id="portfolio" className="py-16 sm:py-20 bg-darker-surface">
+      <div className="container mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold font-inter mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold font-inter mb-4 sm:mb-6"
           >
             My <span className="text-fire-red">Portfolio</span>
           </motion.h2>
@@ -136,7 +136,7 @@ const PortfolioSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-lg text-muted-foreground max-w-3xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0"
           >
             Showcasing creative thumbnail designs that drive engagement and results
           </motion.p>
@@ -148,16 +148,16 @@ const PortfolioSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-12"
+          className="flex justify-center mb-8 sm:mb-12"
         >
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
             {categories.map((category) => (
               <motion.button
                 key={category}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full transition-smooth ${
+                className={`px-4 sm:px-6 py-2 rounded-full transition-smooth text-sm sm:text-base ${
                   selectedCategory === category
                     ? 'bg-fire-red text-white'
                     : 'glass-morphism hover:bg-fire-red/10 text-muted-foreground hover:text-fire-red'
@@ -170,7 +170,7 @@ const PortfolioSection = () => {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {filteredItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -203,14 +203,14 @@ const PortfolioSection = () => {
                     </motion.div>
                   </motion.div>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="font-semibold text-lg">{item.title}</h3>
-                    <span className="px-3 py-1 glass-red text-fire-red text-xs rounded-full font-medium">
+                <div className="p-4 sm:p-6">
+                  <div className="flex items-center justify-between mb-2 sm:mb-3">
+                    <h3 className="font-semibold text-base sm:text-lg">{item.title}</h3>
+                    <span className="px-2 sm:px-3 py-1 glass-red text-fire-red text-xs rounded-full font-medium">
                       {item.category}
                     </span>
                   </div>
-                  <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                  <p className="text-muted-foreground text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed">
                     {item.description}
                   </p>
                   <div className="space-y-2">
@@ -233,19 +233,19 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Card className="max-w-2xl mx-auto p-8 glass-red shadow-elegant">
+          <Card className="max-w-2xl mx-auto p-6 sm:p-8 glass-red shadow-elegant">
             <motion.div
               animate={{ rotate: [0, 90, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <Plus className="w-16 h-16 text-fire-red mx-auto mb-6" />
+              <Plus className="w-12 h-12 sm:w-16 sm:h-16 text-fire-red mx-auto mb-4 sm:mb-6" />
             </motion.div>
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-2xl font-bold mb-4"
+              className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4"
             >
               Ready to Start Your Project?
             </motion.h3>
@@ -254,26 +254,29 @@ const PortfolioSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-muted-foreground mb-6"
+              className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6"
             >
-              Let's create thumbnails that make your content irresistible to click. 
-              Get in touch to discuss your vision and bring it to life.
+              Let's create stunning thumbnails that will make your content stand out and drive engagement
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="hero" size="lg" onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}>
-                  Hire Me Now
+                <Button 
+                  variant="hero" 
+                  size="xl" 
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="w-full sm:w-auto"
+                >
+                  Get Started Today
                 </Button>
               </motion.div>
             </motion.div>

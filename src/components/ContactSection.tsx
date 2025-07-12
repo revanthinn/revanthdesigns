@@ -88,21 +88,21 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-16 sm:py-20 bg-background">
+      <div className="container mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold font-inter mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold font-inter mb-4 sm:mb-6"
           >
             Get In <span className="text-fire-red">Touch</span>
           </motion.h2>
@@ -111,13 +111,13 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-lg text-muted-foreground max-w-3xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0"
           >
             Ready to create stunning thumbnails for your content? Let's discuss your project and bring your vision to life.
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -125,13 +125,13 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Card className="p-8 glass-morphism">
+            <Card className="p-6 sm:p-8 glass-morphism">
               <motion.h3 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="text-2xl font-semibold mb-6 text-fire-red"
+                className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-fire-red"
               >
                 Send a Message
               </motion.h3>
@@ -139,7 +139,7 @@ const ContactSection = () => {
                 action="https://formspree.io/f/YOUR_FORM_ID" 
                 method="POST" 
                 onSubmit={handleSubmit} 
-                className="space-y-6"
+                className="space-y-4 sm:space-y-6"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -226,7 +226,7 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6 sm:space-y-8"
           >
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -234,34 +234,34 @@ const ContactSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="p-8 glass-red shadow-elegant">
+              <Card className="p-6 sm:p-8 glass-red shadow-elegant">
                 <motion.h3 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
-                  className="text-2xl font-semibold mb-6 text-fire-red"
+                  className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-fire-red"
                 >
                   Contact Information
                 </motion.h3>
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {contactInfo.map((info, index) => (
                     <motion.a
                       key={index}
+                      href={info.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       initial={{ opacity: 0, x: 20 }}
                       whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                       viewport={{ once: true }}
                       whileHover={{ x: 10, scale: 1.02 }}
-                      href={info.href}
-                      target={info.href.startsWith('http') ? '_blank' : '_self'}
-                      rel={info.href.startsWith('http') ? 'noopener noreferrer' : ''}
-                      className="flex items-center space-x-4 p-4 rounded-lg glass-morphism hover-glass transition-smooth group"
+                      className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-lg glass-morphism hover-glass transition-smooth group"
                     >
-                      <info.icon className={`w-6 h-6 ${info.color} group-hover:scale-110 transition-smooth`} />
+                      <info.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${info.color} group-hover:scale-110 transition-smooth`} />
                       <div>
-                        <p className="text-sm text-muted-foreground">{info.label}</p>
-                        <p className="font-medium">{info.value}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{info.label}</p>
+                        <p className="text-sm sm:text-base font-medium">{info.value}</p>
                       </div>
                     </motion.a>
                   ))}
@@ -275,15 +275,15 @@ const ContactSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <Card className="p-8 glass-morphism">
-                <div className="flex items-center space-x-4 mb-4">
-                  <MapPin className="w-6 h-6 text-fire-red" />
-                  <h4 className="text-lg font-semibold">Location</h4>
+              <Card className="p-6 sm:p-8 glass-morphism">
+                <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4">
+                  <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-fire-red" />
+                  <h4 className="text-lg sm:text-xl font-semibold">Location</h4>
                 </div>
-                <p className="text-muted-foreground">
+                <p className="text-sm sm:text-base text-muted-foreground">
                   Hyderabad, Telangana, India
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-2">
                   Available for remote work worldwide
                 </p>
               </Card>
@@ -295,9 +295,9 @@ const ContactSection = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <Card className="p-6 glass-red">
-                <h4 className="font-semibold mb-2 text-fire-red">Quick Response</h4>
-                <p className="text-sm text-muted-foreground">
+              <Card className="p-4 sm:p-6 glass-red">
+                <h4 className="font-semibold mb-2 sm:mb-3 text-fire-red">Quick Response</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground">
                   I typically respond to all inquiries within 24 hours. For urgent projects, feel free to call directly.
                 </p>
               </Card>

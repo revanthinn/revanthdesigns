@@ -38,21 +38,21 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-darker-surface">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-16 sm:py-20 bg-darker-surface">
+      <div className="container mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
           <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold font-inter mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold font-inter mb-4 sm:mb-6"
           >
             About <span className="text-fire-red">Me</span>
           </motion.h2>
@@ -61,20 +61,20 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="text-lg text-muted-foreground max-w-3xl mx-auto"
+            className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-4 sm:px-0"
           >
             Passionate about design, technology, and creating impactful digital experiences
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Bio Section */}
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -82,14 +82,14 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <Card className="p-8 glass-morphism backdrop-blur-sm">
-                <h3 className="text-2xl font-semibold mb-4 text-fire-red">My Creative Journey</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+              <Card className="p-6 sm:p-8 glass-morphism backdrop-blur-sm">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-fire-red">My Creative Journey</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
                   From the moment I first opened Photoshop, I knew I had found my calling. What started as a hobby 
                   creating thumbnails for friends has evolved into a passion for crafting digital experiences that 
                   not only look stunning but drive real results.
                 </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
                   Currently pursuing my B.Tech in Computer Science Engineering (AI & ML) at 
                   Gokaraju Rangaraju Institute of Engineering and Technology, I'm bridging the gap between 
                   <span className="text-fire-red font-semibold"> creative design</span> and 
@@ -97,7 +97,7 @@ const AboutSection = () => {
                   My education in AI & Machine Learning isn't just academic—it's shaping how I approach 
                   design problems with data-driven insights and innovative solutions.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                   As a freelance thumbnail designer, I've discovered that the best designs aren't just beautiful—they're 
                   strategic. Every click, every view, every engagement is a testament to understanding both 
                   <span className="text-primary font-semibold"> human psychology</span> and 
@@ -115,18 +115,18 @@ const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-4 sm:space-y-6"
           >
             <motion.h3 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="text-2xl font-semibold mb-6 text-fire-red"
+              className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-fire-red"
             >
               Education
             </motion.h3>
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {education.map((edu, index) => (
                 <motion.div 
                   key={index} 
@@ -136,17 +136,17 @@ const AboutSection = () => {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className={`w-4 h-4 rounded-full mt-2 ${
+                  <div className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full mt-2 ${
                       edu.status === 'current' ? 'bg-fire-red animate-glow-pulse' : 'bg-deep-red'
                     }`}></div>
                     <motion.div 
                       whileHover={{ scale: 1.02 }}
                       className="flex-1"
                     >
-                      <Card className="p-6 glass-morphism hover-glass transition-smooth">
+                      <Card className="p-4 sm:p-6 glass-morphism hover-glass transition-smooth">
                         <div className="flex justify-between items-start mb-2">
-                          <h4 className="font-semibold text-lg">{edu.degree}</h4>
-                          <span className={`text-sm px-3 py-1 rounded-full ${
+                          <h4 className="font-semibold text-base sm:text-lg">{edu.degree}</h4>
+                          <span className={`text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full ${
                             edu.status === 'current' 
                               ? 'bg-fire-red/20 text-fire-red' 
                               : 'bg-deep-red/20 text-deep-red'
@@ -154,11 +154,11 @@ const AboutSection = () => {
                             {edu.year}
                           </span>
                         </div>
-                        <p className="text-muted-foreground">{edu.institution}</p>
+                        <p className="text-xs sm:text-sm text-muted-foreground">{edu.institution}</p>
                       </Card>
                     </motion.div>
                   {index < education.length - 1 && (
-                    <div className="w-0.5 h-6 bg-border ml-2 mt-2"></div>
+                    <div className="w-0.5 h-4 sm:h-6 bg-border ml-1.5 sm:ml-2 mt-2"></div>
                   )}
                 </motion.div>
               ))}
@@ -168,22 +168,22 @@ const AboutSection = () => {
         </div>
       </div>
       {/* Skills Section - Thumbnail/Graphic Designer */}
-      <section id="skills" className="py-20 relative overflow-hidden">
+      <section id="skills" className="py-16 sm:py-20 relative overflow-hidden">
         {/* Background gradient to match Hero section */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-darker-surface to-deep-black"></div>
         {/* Optional: Parallax or animated background elements can be added here if desired */}
-        <div className="container mx-auto px-6 flex flex-col items-center relative z-10">
+        <div className="container mx-auto flex flex-col items-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="text-center mb-8 sm:mb-10"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-inter mb-2">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-inter mb-2">
               <span className="text-fire-red">Creative Skills</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-medium">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto font-medium px-4 sm:px-0">
               The art and tools behind every scroll-stopping thumbnail
             </p>
             <motion.div
@@ -191,48 +191,48 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="flex justify-center gap-4 my-8"
+              className="flex justify-center gap-3 sm:gap-4 my-6 sm:my-8"
             >
               <motion.img
                 whileHover={{ scale: 1.13, filter: 'brightness(1.2) saturate(1.2)' }}
                 transition={{ duration: 0.18 }}
                 src={photoshopLogo}
                 alt="Photoshop"
-                className="w-10 h-10 object-contain cursor-pointer select-none"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain cursor-pointer select-none"
               />
               <motion.img
                 whileHover={{ scale: 1.13, filter: 'brightness(1.2) saturate(1.2)' }}
                 transition={{ duration: 0.18 }}
                 src={canvaLogo}
                 alt="Canva"
-                className="w-10 h-10 object-contain cursor-pointer select-none"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain cursor-pointer select-none"
               />
               <motion.img
                 whileHover={{ scale: 1.13, filter: 'brightness(1.2) saturate(1.2)' }}
                 transition={{ duration: 0.18 }}
                 src={illustratorLogo}
                 alt="Illustrator"
-                className="w-10 h-10 object-contain cursor-pointer select-none"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain cursor-pointer select-none"
               />
               <motion.img
                 whileHover={{ scale: 1.13, filter: 'brightness(1.2) saturate(1.2)' }}
                 transition={{ duration: 0.18 }}
                 src={figmaLogo}
                 alt="Figma"
-                className="w-10 h-10 object-contain cursor-pointer select-none"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain cursor-pointer select-none"
               />
               <motion.img
                 whileHover={{ scale: 1.13, filter: 'brightness(1.2) saturate(1.2)' }}
                 transition={{ duration: 0.18 }}
                 src={aiToolsLogo}
                 alt="AI Tools"
-                className="w-10 h-10 object-contain cursor-pointer select-none rounded"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain cursor-pointer select-none rounded"
               />
             </motion.div>
           </motion.div>
           {/* Timeline/Roadmap for Skills */}
           <div className="w-full max-w-4xl mx-auto flex flex-col items-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 flex-wrap w-full relative mb-16">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-8 flex-wrap w-full relative mb-12 sm:mb-16">
               {/* Animated connector line (now relative to timeline container) */}
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -250,6 +250,7 @@ const AboutSection = () => {
                   { icon: Sparkles, label: 'Photo Editing', desc: 'Advanced retouching, effects, cutouts, compositing' },
                   { icon: Clock, label: 'Fast Delivery', desc: 'Quick turnaround, multiple revisions, 24/7 support' }
                 ];
+
                 return skillsData.map((skill, idx) => (
                   <motion.div
                     key={skill.label}

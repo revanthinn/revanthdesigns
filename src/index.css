@@ -95,6 +95,20 @@ All colors MUST be HSL.
   html, body {
     @apply bg-background text-foreground;
     /* Remove universal Sora font */
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Prevent horizontal scrolling */
+  body {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  /* Ensure all sections don't overflow */
+  section {
+    overflow-x: hidden;
+    width: 100%;
   }
 
   /* Hero titles and section headers */
